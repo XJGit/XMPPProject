@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		040D8C8C1B99185D00D3DA6E /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 040D8C8B1B99185D00D3DA6E /* NSString+Hash.m */; };
+		0414B7491B99BCA0002516E7 /* SMS_SDKLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0414B7451B99BCA0002516E7 /* SMS_SDKLocalizable.strings */; };
+		0414B74A1B99BCA0002516E7 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0414B7471B99BCA0002516E7 /* SMS_SDK.framework */; };
+		0414B74C1B99BCBF002516E7 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0414B74B1B99BCBF002516E7 /* MessageUI.framework */; };
+		0414B74E1B99BCC8002516E7 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0414B74D1B99BCC8002516E7 /* libz.dylib */; };
+		0414B7501B99BCD4002516E7 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0414B74F1B99BCD4002516E7 /* libicucore.dylib */; };
+		0414B7531B99BD33002516E7 /* RegistVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0414B7521B99BD33002516E7 /* RegistVC.m */; };
+		0414B7571B99C4CF002516E7 /* CodeVerifyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0414B7561B99C4CF002516E7 /* CodeVerifyVC.m */; };
 		041A13CE1B96E1BB00842AB8 /* MessageVerify.m in Sources */ = {isa = PBXBuildFile; fileRef = 041A13CD1B96E1BB00842AB8 /* MessageVerify.m */; };
 		04DD84971B91646D006779F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DD84961B91646D006779F9 /* main.m */; };
 		04DD849A1B91646D006779F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DD84991B91646D006779F9 /* AppDelegate.m */; };
@@ -33,6 +40,16 @@
 /* Begin PBXFileReference section */
 		040D8C8A1B99185D00D3DA6E /* NSString+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
 		040D8C8B1B99185D00D3DA6E /* NSString+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
+		0414B7461B99BCA0002516E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SMS_SDKLocalizable.strings; sourceTree = "<group>"; };
+		0414B7471B99BCA0002516E7 /* SMS_SDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SMS_SDK.framework; sourceTree = "<group>"; };
+		0414B7481B99BCA0002516E7 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SMS_SDKLocalizable.strings"; sourceTree = "<group>"; };
+		0414B74B1B99BCBF002516E7 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		0414B74D1B99BCC8002516E7 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		0414B74F1B99BCD4002516E7 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		0414B7511B99BD33002516E7 /* RegistVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistVC.h; sourceTree = "<group>"; };
+		0414B7521B99BD33002516E7 /* RegistVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistVC.m; sourceTree = "<group>"; };
+		0414B7551B99C4CF002516E7 /* CodeVerifyVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CodeVerifyVC.h; path = ../CodeVerifyVC.h; sourceTree = "<group>"; };
+		0414B7561B99C4CF002516E7 /* CodeVerifyVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CodeVerifyVC.m; path = ../CodeVerifyVC.m; sourceTree = "<group>"; };
 		041A13CC1B96E1BA00842AB8 /* MessageVerify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageVerify.h; sourceTree = "<group>"; };
 		041A13CD1B96E1BB00842AB8 /* MessageVerify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageVerify.m; sourceTree = "<group>"; };
 		04DD84911B91646D006779F9 /* 微信项目.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "微信项目.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,6 +75,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0414B7501B99BCD4002516E7 /* libicucore.dylib in Frameworks */,
+				0414B74E1B99BCC8002516E7 /* libz.dylib in Frameworks */,
+				0414B74C1B99BCBF002516E7 /* MessageUI.framework in Frameworks */,
+				0414B74A1B99BCA0002516E7 /* SMS_SDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,9 +103,33 @@
 			name = logic;
 			sourceTree = "<group>";
 		};
+		0414B7441B99BCA0002516E7 /* SMS_SDK */ = {
+			isa = PBXGroup;
+			children = (
+				0414B7451B99BCA0002516E7 /* SMS_SDKLocalizable.strings */,
+				0414B7471B99BCA0002516E7 /* SMS_SDK.framework */,
+			);
+			path = SMS_SDK;
+			sourceTree = "<group>";
+		};
+		0414B7541B99C480002516E7 /* regist */ = {
+			isa = PBXGroup;
+			children = (
+				0414B7511B99BD33002516E7 /* RegistVC.h */,
+				0414B7521B99BD33002516E7 /* RegistVC.m */,
+				0414B7551B99C4CF002516E7 /* CodeVerifyVC.h */,
+				0414B7561B99C4CF002516E7 /* CodeVerifyVC.m */,
+			);
+			name = regist;
+			sourceTree = "<group>";
+		};
 		04DD84881B91646D006779F9 = {
 			isa = PBXGroup;
 			children = (
+				0414B74F1B99BCD4002516E7 /* libicucore.dylib */,
+				0414B74D1B99BCC8002516E7 /* libz.dylib */,
+				0414B74B1B99BCBF002516E7 /* MessageUI.framework */,
+				0414B7441B99BCA0002516E7 /* SMS_SDK */,
 				04DD84931B91646D006779F9 /* 微信项目 */,
 				04DD84AD1B91646E006779F9 /* 微信项目Tests */,
 				04DD84921B91646D006779F9 /* Products */,
@@ -149,6 +194,7 @@
 				04DD84BB1B91A607006779F9 /* Login.storyboard */,
 				04DD84BD1B91AA84006779F9 /* LoginVC.h */,
 				04DD84BE1B91AA84006779F9 /* LoginVC.m */,
+				0414B7541B99C480002516E7 /* regist */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -216,6 +262,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 04DD84881B91646D006779F9;
 			productRefGroup = 04DD84921B91646D006779F9 /* Products */;
@@ -235,6 +282,7 @@
 			files = (
 				04DD84BC1B91A607006779F9 /* Login.storyboard in Resources */,
 				04DD84A01B91646D006779F9 /* Main.storyboard in Resources */,
+				0414B7491B99BCA0002516E7 /* SMS_SDKLocalizable.strings in Resources */,
 				04DD84A51B91646D006779F9 /* LaunchScreen.xib in Resources */,
 				04DD84A21B91646D006779F9 /* Images.xcassets in Resources */,
 			);
@@ -259,7 +307,9 @@
 				04DD849A1B91646D006779F9 /* AppDelegate.m in Sources */,
 				04DD84BF1B91AA84006779F9 /* LoginVC.m in Sources */,
 				041A13CE1B96E1BB00842AB8 /* MessageVerify.m in Sources */,
+				0414B7531B99BD33002516E7 /* RegistVC.m in Sources */,
 				04DD84971B91646D006779F9 /* main.m in Sources */,
+				0414B7571B99C4CF002516E7 /* CodeVerifyVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +332,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		0414B7451B99BCA0002516E7 /* SMS_SDKLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0414B7461B99BCA0002516E7 /* en */,
+				0414B7481B99BCA0002516E7 /* zh-Hans */,
+			);
+			name = SMS_SDKLocalizable.strings;
+			sourceTree = "<group>";
+		};
 		04DD849E1B91646D006779F9 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -383,6 +442,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SMS_SDK",
+				);
 				INFOPLIST_FILE = "微信项目/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -394,6 +457,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/SMS_SDK",
+				);
 				INFOPLIST_FILE = "微信项目/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
