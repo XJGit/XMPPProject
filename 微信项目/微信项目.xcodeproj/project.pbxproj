@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		040D8C8C1B99185D00D3DA6E /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 040D8C8B1B99185D00D3DA6E /* NSString+Hash.m */; };
+		041A13CE1B96E1BB00842AB8 /* MessageVerify.m in Sources */ = {isa = PBXBuildFile; fileRef = 041A13CD1B96E1BB00842AB8 /* MessageVerify.m */; };
 		04DD84971B91646D006779F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DD84961B91646D006779F9 /* main.m */; };
 		04DD849A1B91646D006779F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DD84991B91646D006779F9 /* AppDelegate.m */; };
 		04DD849D1B91646D006779F9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DD849C1B91646D006779F9 /* ViewController.m */; };
@@ -29,6 +31,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		040D8C8A1B99185D00D3DA6E /* NSString+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
+		040D8C8B1B99185D00D3DA6E /* NSString+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
+		041A13CC1B96E1BA00842AB8 /* MessageVerify.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageVerify.h; sourceTree = "<group>"; };
+		041A13CD1B96E1BB00842AB8 /* MessageVerify.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageVerify.m; sourceTree = "<group>"; };
 		04DD84911B91646D006779F9 /* 微信项目.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "微信项目.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DD84951B91646D006779F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04DD84961B91646D006779F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -65,6 +71,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040D8C8D1B99186500D3DA6E /* logic */ = {
+			isa = PBXGroup;
+			children = (
+				040D8C8A1B99185D00D3DA6E /* NSString+Hash.h */,
+				040D8C8B1B99185D00D3DA6E /* NSString+Hash.m */,
+				041A13CC1B96E1BA00842AB8 /* MessageVerify.h */,
+				041A13CD1B96E1BB00842AB8 /* MessageVerify.m */,
+			);
+			name = logic;
+			sourceTree = "<group>";
+		};
 		04DD84881B91646D006779F9 = {
 			isa = PBXGroup;
 			children = (
@@ -86,8 +103,9 @@
 		04DD84931B91646D006779F9 /* 微信项目 */ = {
 			isa = PBXGroup;
 			children = (
-				04DD84981B91646D006779F9 /* AppDelegate.h */,
+				040D8C8D1B99186500D3DA6E /* logic */,
 				04DD84BA1B91661E006779F9 /* Login */,
+				04DD84981B91646D006779F9 /* AppDelegate.h */,
 				04DD84991B91646D006779F9 /* AppDelegate.m */,
 				04DD849B1B91646D006779F9 /* ViewController.h */,
 				04DD849C1B91646D006779F9 /* ViewController.m */,
@@ -237,8 +255,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				04DD849D1B91646D006779F9 /* ViewController.m in Sources */,
+				040D8C8C1B99185D00D3DA6E /* NSString+Hash.m in Sources */,
 				04DD849A1B91646D006779F9 /* AppDelegate.m in Sources */,
 				04DD84BF1B91AA84006779F9 /* LoginVC.m in Sources */,
+				041A13CE1B96E1BB00842AB8 /* MessageVerify.m in Sources */,
 				04DD84971B91646D006779F9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
