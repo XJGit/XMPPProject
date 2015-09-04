@@ -38,16 +38,16 @@
                                 <rect key="frame" x="0.0" y="65" width="600" height="424"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iAN-mg-dxf">
-                                        <rect key="frame" x="50" y="108" width="500" height="30"/>
+                                        <rect key="frame" x="50" y="88" width="500" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="确认密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vlS-X4-CcD">
-                                        <rect key="frame" x="50" y="188" width="500" height="30"/>
+                                        <rect key="frame" x="50" y="148" width="500" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2FB-Fu-bDK">
+                                    <button opaque="NO" alpha="0.49999999999999961" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2FB-Fu-bDK">
                                         <rect key="frame" x="210" y="258" width="180" height="30"/>
                                         <color key="backgroundColor" red="0.38169748889999999" green="1" blue="0.17368721349999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -69,13 +69,13 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstItem="XhF-fa-tY6" firstAttribute="leading" secondItem="iAN-mg-dxf" secondAttribute="leading" id="1h1-rz-gUu"/>
-                                    <constraint firstItem="XhF-fa-tY6" firstAttribute="top" secondItem="iAN-mg-dxf" secondAttribute="top" constant="-80" id="4aZ-65-Mlb"/>
+                                    <constraint firstItem="XhF-fa-tY6" firstAttribute="top" secondItem="iAN-mg-dxf" secondAttribute="top" constant="-60" id="4aZ-65-Mlb"/>
                                     <constraint firstItem="XhF-fa-tY6" firstAttribute="width" secondItem="iAN-mg-dxf" secondAttribute="width" id="7jO-gL-Duq"/>
                                     <constraint firstItem="iAN-mg-dxf" firstAttribute="width" secondItem="vlS-X4-CcD" secondAttribute="width" id="80y-FR-iZU"/>
                                     <constraint firstAttribute="centerX" secondItem="2FB-Fu-bDK" secondAttribute="centerX" id="Ddd-S2-kik"/>
                                     <constraint firstItem="iAN-mg-dxf" firstAttribute="leading" secondItem="vlS-X4-CcD" secondAttribute="leading" id="MHf-jb-JHw"/>
                                     <constraint firstAttribute="height" constant="424" id="Ojj-gV-zpU"/>
-                                    <constraint firstItem="iAN-mg-dxf" firstAttribute="top" secondItem="vlS-X4-CcD" secondAttribute="top" constant="-80" id="Wsl-Ly-bSK"/>
+                                    <constraint firstItem="iAN-mg-dxf" firstAttribute="top" secondItem="vlS-X4-CcD" secondAttribute="top" constant="-60" id="Wsl-Ly-bSK"/>
                                     <constraint firstAttribute="bottom" secondItem="2FB-Fu-bDK" secondAttribute="bottom" constant="136" id="YdV-yD-BJM"/>
                                     <constraint firstItem="XhF-fa-tY6" firstAttribute="top" secondItem="kEZ-EU-tY8" secondAttribute="top" constant="28" id="cqh-Hn-ctJ"/>
                                     <constraint firstItem="XhF-fa-tY6" firstAttribute="leading" secondItem="kEZ-EU-tY8" secondAttribute="leading" constant="50" id="dbk-fA-m6n"/>
