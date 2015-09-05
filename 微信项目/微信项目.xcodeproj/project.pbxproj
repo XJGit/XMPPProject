@@ -25,6 +25,7 @@
 		04DD84B11B91646E006779F9 /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DD84B01B91646E006779F9 /* ____Tests.m */; };
 		04DD84BC1B91A607006779F9 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04DD84BB1B91A607006779F9 /* Login.storyboard */; };
 		04DD84BF1B91AA84006779F9 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DD84BE1B91AA84006779F9 /* LoginVC.m */; };
+		04F7957D1B9A651D00ED5BBB /* FinishRegistVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F7957C1B9A651D00ED5BBB /* FinishRegistVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		04DD84BB1B91A607006779F9 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		04DD84BD1B91AA84006779F9 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
 		04DD84BE1B91AA84006779F9 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
+		04F7957B1B9A651D00ED5BBB /* FinishRegistVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinishRegistVC.h; sourceTree = "<group>"; };
+		04F7957C1B9A651D00ED5BBB /* FinishRegistVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinishRegistVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +122,8 @@
 				0414B7521B99BD33002516E7 /* RegistVC.m */,
 				0414B7551B99C4CF002516E7 /* CodeVerifyVC.h */,
 				0414B7561B99C4CF002516E7 /* CodeVerifyVC.m */,
+				04F7957B1B9A651D00ED5BBB /* FinishRegistVC.h */,
+				04F7957C1B9A651D00ED5BBB /* FinishRegistVC.m */,
 			);
 			name = regist;
 			sourceTree = "<group>";
@@ -126,9 +131,7 @@
 		04DD84881B91646D006779F9 = {
 			isa = PBXGroup;
 			children = (
-				0414B74F1B99BCD4002516E7 /* libicucore.dylib */,
-				0414B74D1B99BCC8002516E7 /* libz.dylib */,
-				0414B74B1B99BCBF002516E7 /* MessageUI.framework */,
+				04F7957E1B9A69E800ED5BBB /* Framework */,
 				0414B7441B99BCA0002516E7 /* SMS_SDK */,
 				04DD84931B91646D006779F9 /* 微信项目 */,
 				04DD84AD1B91646E006779F9 /* 微信项目Tests */,
@@ -197,6 +200,16 @@
 				0414B7541B99C480002516E7 /* regist */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		04F7957E1B9A69E800ED5BBB /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				0414B74B1B99BCBF002516E7 /* MessageUI.framework */,
+				0414B74D1B99BCC8002516E7 /* libz.dylib */,
+				0414B74F1B99BCD4002516E7 /* libicucore.dylib */,
+			);
+			name = Framework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +322,7 @@
 				041A13CE1B96E1BB00842AB8 /* MessageVerify.m in Sources */,
 				0414B7531B99BD33002516E7 /* RegistVC.m in Sources */,
 				04DD84971B91646D006779F9 /* main.m in Sources */,
+				04F7957D1B9A651D00ED5BBB /* FinishRegistVC.m in Sources */,
 				0414B7571B99C4CF002516E7 /* CodeVerifyVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -450,6 +464,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 			};
 			name = Debug;
 		};
@@ -465,6 +480,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				RUN_CLANG_STATIC_ANALYZER = YES;
 			};
 			name = Release;
 		};

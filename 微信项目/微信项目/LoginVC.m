@@ -32,6 +32,7 @@
     if (_user.text.length != 0 && _pwd.text.length != 0) {
         [userDefault setObject:_user.text forKey:@"user"];
         [userDefault setObject:_pwd.text.md5String forKey:@"pwd"];
+        
     }
     else{
         return;

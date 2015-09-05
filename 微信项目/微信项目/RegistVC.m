@@ -12,11 +12,10 @@
 #import "NSString+Hash.h"
 
 @interface RegistVC ()<UITextFieldDelegate, UIAlertViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UITextField *user;
-@property (weak, nonatomic) IBOutlet UITextField *pwd;
-@property (weak, nonatomic) IBOutlet UITextField *verifyPwd;
 @property (weak, nonatomic) IBOutlet UIButton *regist;
-@property (weak, nonatomic) IBOutlet UILabel *userWarn;
+
 
 @end
 
@@ -25,11 +24,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _user.delegate = self;
-    _pwd.delegate = self;
-    _verifyPwd.delegate = self;
+    
 }
 
 - (IBAction)regist:(id)sender {
+#warning 需要先从服务器获取数据得知号码是否被注册过
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"确定向%@发送验证码？",_user.text] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
     [alert show];
     alert.delegate = self;
@@ -37,27 +36,28 @@
 
 #pragma mark - textFieldDelegate
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
-    BOOL flag = [[MessageVerify showInstance] verfyTel:[textField.text stringByAppendingString:string]];
-    if (!flag) {
-        _userWarn.text = @"请输入正确的手机号";
+    //判断手机号码是否正确
+    BOOL flag;
+    if (![string isEqualToString:@""]) {
+        flag = [[MessageVerify showInstance] verfyTel:[_user.text stringByAppendingString:string]];
+    }
+    else {
+        flag = [[MessageVerify showInstance] verfyTel:[_user.text substringToIndex:_user.text.length - 1]];
+    }
+    //设置button属性
+    if (flag) {
+        _regist.backgroundColor = [UIColor colorWithRed:95/255.0 green:190/255.0 blue:25/155.0 alpha:1];
+        _regist.enabled = YES;
     }
     else{
-        _userWarn.text = nil;
+        _regist.backgroundColor = [UIColor lightGrayColor];
+        _regist.enabled = NO;
     }
     return YES;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
-    
-    
     [textField resignFirstResponder];
-    
-    //
-    if (![_userWarn.text isEqualToString:@""] || _userWarn == nil) {
-        _regist.enabled = YES;
-        _regist.alpha = 1.0;
-    }
-    
     return YES;
 }
 
@@ -73,8 +73,7 @@
             if (!error) {
                 NSLog(@"发送成功");
                 UIViewController *verifyVC = [[UIStoryboard storyboardWithName:@"Login" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"CodeVerifyVC"];
-                [self presentViewController:verifyVC animated:YES completion:^{
-                }];
+                [self.navigationController pushViewController:verifyVC animated:YES];
             }
             else{
                 NSLog(@"%@", error.errorDescription);

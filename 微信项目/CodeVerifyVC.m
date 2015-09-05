@@ -8,6 +8,7 @@
 
 #import "CodeVerifyVC.h"
 #import <SMS_SDK/SMS_SDK.h>
+
 @interface CodeVerifyVC ()
 @property (weak, nonatomic) IBOutlet UITextField *verifyCode;
 
@@ -28,6 +29,10 @@
         }
         else{
             NSLog(@"验证成功！");
+            UIViewController *VC = [[UIStoryboard storyboardWithName:@"Login" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"Finish"];
+            [self presentViewController:VC animated:YES completion:^{
+                
+            }];
         }
     }];
 }
