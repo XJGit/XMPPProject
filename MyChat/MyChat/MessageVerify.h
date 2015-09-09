@@ -16,7 +16,7 @@
  *
  * @return 返回唯一实例
  */
-+ (instancetype)showInstance;
++ (instancetype)shareInstance;
 
 /**
  * @brief 验证手机号
@@ -25,7 +25,7 @@
  *
  * @return 成YES 失败NO
  */
-- (BOOL)verfyTel:(NSString *)tel;
+- (BOOL)verifyTel:(NSString *)tel;
 
 /**
  * @brief 验证密码
@@ -34,6 +34,6 @@
  *
  * @return 成YES 失败NO
  */
-- (BOOL)verfyPwd:(NSString *)pwd;
+- (BOOL)verifyPwd:(NSString *)pwd;
 
 @end

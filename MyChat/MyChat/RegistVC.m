@@ -10,11 +10,20 @@
 #import "MessageVerify.h"
 #import <SMS_SDK/SMS_SDK.h>
 #import "NSString+Hash.h"
+#import "AlertView.h"
+#import "XMPPTool.h"
+#import "Account.h"
 
-@interface RegistVC ()<UITextFieldDelegate, UIAlertViewDelegate>
+#define INTERVAL 60
 
-@property (weak, nonatomic) IBOutlet UITextField *user;
+@interface RegistVC ()<UITextFieldDelegate, UIAlertViewDelegate>{
+    NSInteger _interval;//重发验证码时长（默认60s）
+}
+@property (weak, nonatomic) IBOutlet UITextField *pwd;
+@property (weak, nonatomic) IBOutlet UITextField *verifyCode;
+@property (weak, nonatomic) IBOutlet UITextField *phoneNum;
 @property (weak, nonatomic) IBOutlet UIButton *regist;
+@property (weak, nonatomic) IBOutlet UIButton *verifyBtn;
 
 
 @end
@@ -23,39 +32,64 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _user.delegate = self;
-    
+    _phoneNum.delegate = self;
+    _interval = INTERVAL;
 }
 
-- (IBAction)regist:(id)sender {
-#warning 需要先从服务器获取数据得知号码是否被注册过
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"确定向%@发送验证码？",_user.text] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+#pragma mark - 获取验证码
+- (IBAction)verifyCode:(id)sender {
+    [self.view endEditing:YES];
+    BOOL flag = [[MessageVerify shareInstance] verifyTel:_phoneNum.text];
+    if (!flag) {
+        [[AlertView initInstance] showWithMessage:@"请输入正确的手机号码"];
+        return;
+    }
+    
+    if (![[MessageVerify shareInstance] verifyPwd:_pwd.text]) {
+        [[AlertView initInstance] showWithMessage:@"请输入6～10位密码"];
+        return;
+    }
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"确定向%@发送验证码？",_phoneNum.text] delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
     [alert show];
     alert.delegate = self;
 }
 
-#pragma mark - textFieldDelegate
-- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string{
-    //判断手机号码是否正确
-    BOOL flag;
-    if (![string isEqualToString:@""]) {
-        flag = [[MessageVerify showInstance] verfyTel:[_user.text stringByAppendingString:string]];
+#pragma mark - 注册
+- (IBAction)regist:(id)sender {
+    [self.view endEditing:YES];
+    BOOL flag = [[MessageVerify shareInstance] verifyTel:_phoneNum.text];
+    //校验手机号
+    if (!flag) {
+        [[AlertView initInstance] showWithMessage:@"请输入正确的手机号码"];
+        return;
     }
-    else {
-        flag = [[MessageVerify showInstance] verfyTel:[_user.text substringToIndex:_user.text.length - 1]];
+    //校验密码
+    if (![[MessageVerify shareInstance] verifyPwd:_pwd.text]) {
+        [[AlertView initInstance] showWithMessage:@"请输入6～10位密码"];
+        return;
     }
-    //设置button属性
-    if (flag) {
-        _regist.backgroundColor = [UIColor colorWithRed:95/255.0 green:190/255.0 blue:25/155.0 alpha:1];
-        _regist.enabled = YES;
-    }
-    else{
-        _regist.backgroundColor = [UIColor lightGrayColor];
-        _regist.enabled = NO;
-    }
-    return YES;
-}
+    //验证验证码
+    [SMS_SDK commitVerifyCode:_verifyCode.text result:^(enum SMS_ResponseState state) {
+        if (state == SMS_ResponseStateFail) {
+            [[AlertView initInstance] showWithMessage:@"验证码错误"];
+        }
+        else{
+            //
+            [Account shareInstance].registUser = _phoneNum.text;
+            [Account shareInstance].registPwd = [_pwd.text hmacMD5StringWithKey:@"pwd"];
+            [XMPPTool shareInsans].registOperation = YES;
+            [[XMPPTool shareInsans] XMPPRegist:^(XMPPResultType result) {
+                if (result == XMPPresultRegistFialuer) {
+                    NSLog(@"注册失败,这个号码已经被注册了，请直接登录");
+                }
+            }];
+            
+            [self.navigationController popViewControllerAnimated:YES];
+        }
+    }];
+    
 
+}
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
     return YES;
@@ -63,17 +97,17 @@
 
 #pragma mark - alertViewDelegate
 
-- (void)alertViewCancel:(UIAlertView *)alertView{
-    
-}
-
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    [self.view endEditing:YES];
     if (1 == buttonIndex) {
-        [SMS_SDK getVerificationCodeBySMSWithPhone:_user.text zone:@"86" result:^(SMS_SDKError *error) {
+        
+        [SMS_SDK getVerificationCodeBySMSWithPhone:_phoneNum.text zone:@"86" result:^(SMS_SDKError *error) {
             if (!error) {
                 NSLog(@"发送成功");
-                UIViewController *verifyVC = [[UIStoryboard storyboardWithName:@"Login" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"CodeVerifyVC"];
-                [self.navigationController pushViewController:verifyVC animated:YES];
+                [_verifyBtn setTitleColor:[UIColor lightGrayColor] forState:UIControlStateNormal];
+                _verifyBtn.enabled = NO;
+                [[AlertView initInstance] showWithMessage:@"我们已向您的手机发送了一个验证码"];
+                [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(changeVerifyBtnTitle:) userInfo:nil repeats:YES];
             }
             else{
                 NSLog(@"%@", error.errorDescription);
@@ -82,19 +116,24 @@
         }];
     }
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)cancel:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - changeTitle
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)changeVerifyBtnTitle:(NSTimer *)timer{
+    _interval --;
+    if (0 == _interval) {
+        _interval = INTERVAL;
+        _verifyBtn.enabled = YES;
+        [_verifyBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [_verifyBtn setTitle:@"发送验证码" forState:UIControlStateNormal];
+        [timer invalidate];
+        return;
+    }
+    [_verifyBtn setTitle:[NSString  stringWithFormat:@"%lis后重发",_interval] forState:UIControlStateNormal];
 }
-*/
+
 
 @end
