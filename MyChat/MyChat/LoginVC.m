@@ -34,7 +34,7 @@
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    _user.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"user"];
+    _user.text = [Account shareInstance].loginUser;
 }
 
 #pragma mark - login

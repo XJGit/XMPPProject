@@ -7,17 +7,23 @@
 //
 
 #import "XMPPTool.h"
-#import "XMPPFramework.h"
+
 #import "Account.h"
 #import "AppDelegate.h"
+
 
 #define userKey @"user"
 #define pwdKey @"pwd"
 #define isLoginKey @"isLogin"
 
+
 @interface XMPPTool()<XMPPStreamDelegate>{
     
     XMPPResultTypeBlock _xmppResultBlock;//登陆结果回调
+    
+    XMPPvCardCoreDataStorage *_vCardStorage;//电子名片数据存储
+    
+    
 }
 
 @property (nonatomic, strong)XMPPStream *xmppStream;//与服务器交互核心类
@@ -62,6 +68,20 @@
 #pragma mark - xmpp
 - (void)setupXmppStream{
     _xmppStream = [[XMPPStream alloc] init];
+    
+    //添加电子名片模块
+    _vCardStorage = [XMPPvCardCoreDataStorage sharedInstance];
+    _vCard = [[XMPPvCardTempModule alloc] initWithvCardStorage:_vCardStorage];
+    //激活模块
+    [_vCard activate:_xmppStream];
+    //一般电子名片会配合“头像模块”一起使用
+    _avatar = [[XMPPvCardAvatarModule alloc] initWithvCardTempModule:_vCard];
+    [_avatar activate:_xmppStream];
+    
+    //花名册模块
+    _rosterStorage = [[XMPPRosterCoreDataStorage alloc] init];
+    _roster = [[XMPPRoster alloc] initWithRosterStorage:_rosterStorage];
+    [_roster activate:_xmppStream];
     //设置代理
     [_xmppStream addDelegate:self delegateQueue:dispatch_get_main_queue()];
 }
@@ -157,7 +177,22 @@
 #pragma mark - 注册失败
 - (void)xmppStream:(XMPPStream *)sender didNotRegister:(DDXMLElement *)error{
     if (_xmppResultBlock) {
+     
         _xmppResultBlock(XMPPresultRegistFialuer);
     }
 }
+
+- (void)tearDoenStream{
+    [_xmppStream removeDelegate:self];
+    [_vCard deactivate];
+    [_avatar deactivate];
+    
+    [_xmppStream disconnect];
+    _vCardStorage = nil;
+    _vCard = nil;
+    _avatar = nil;
+    _xmppStream = nil;
+}
+
+
 @end

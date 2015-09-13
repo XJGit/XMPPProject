@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		040084DF1B9D10050025713E /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 040084DE1B9D10050025713E /* AlertView.m */; };
+		040A372B1BA56F6900888BA9 /* ContactVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 040A372A1BA56F6900888BA9 /* ContactVC.m */; settings = {ASSET_TAGS = (); }; };
+		040A37311BA5AA4500888BA9 /* 气泡.png in Resources */ = {isa = PBXBuildFile; fileRef = 040A37301BA5AA4500888BA9 /* 气泡.png */; settings = {ASSET_TAGS = (); }; };
+		040A37351BA5AD5800888BA9 /* 通讯录.png in Resources */ = {isa = PBXBuildFile; fileRef = 040A37341BA5AD5800888BA9 /* 通讯录.png */; settings = {ASSET_TAGS = (); }; };
+		040A37371BA5AEE200888BA9 /* 我.png in Resources */ = {isa = PBXBuildFile; fileRef = 040A37361BA5AEE200888BA9 /* 我.png */; settings = {ASSET_TAGS = (); }; };
+		040A37391BA5AEE900888BA9 /* 发现.png in Resources */ = {isa = PBXBuildFile; fileRef = 040A37381BA5AEE900888BA9 /* 发现.png */; settings = {ASSET_TAGS = (); }; };
 		040D8C8C1B99185D00D3DA6E /* NSString+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 040D8C8B1B99185D00D3DA6E /* NSString+Hash.m */; };
 		0414B7491B99BCA0002516E7 /* SMS_SDKLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0414B7451B99BCA0002516E7 /* SMS_SDKLocalizable.strings */; };
 		0414B74A1B99BCA0002516E7 /* SMS_SDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0414B7471B99BCA0002516E7 /* SMS_SDK.framework */; };
@@ -157,6 +162,7 @@
 		042DC3B01B9B1602009BF37D /* XMPPMessage+XEP_0308.m in Sources */ = {isa = PBXBuildFile; fileRef = 042DC3491B9B1601009BF37D /* XMPPMessage+XEP_0308.m */; };
 		042DC3B11B9B1602009BF37D /* XMPPMessage+XEP_0333.m in Sources */ = {isa = PBXBuildFile; fileRef = 042DC34C1B9B1601009BF37D /* XMPPMessage+XEP_0333.m */; };
 		042DC3B21B9B1602009BF37D /* NSXMLElement+XEP_0335.m in Sources */ = {isa = PBXBuildFile; fileRef = 042DC34F1B9B1601009BF37D /* NSXMLElement+XEP_0335.m */; };
+		04D6D1901BA19CD3002B0A56 /* MyMessageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04D6D18F1BA19CD3002B0A56 /* MyMessageVC.m */; settings = {ASSET_TAGS = (); }; };
 		04DD84971B91646D006779F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DD84961B91646D006779F9 /* main.m */; };
 		04DD849A1B91646D006779F9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DD84991B91646D006779F9 /* AppDelegate.m */; };
 		04DD849D1B91646D006779F9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DD849C1B91646D006779F9 /* ViewController.m */; };
@@ -166,6 +172,9 @@
 		04DD84B11B91646E006779F9 /* MyChatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DD84B01B91646E006779F9 /* MyChatTests.m */; };
 		04DD84BC1B91A607006779F9 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 04DD84BB1B91A607006779F9 /* Login.storyboard */; };
 		04DD84BF1B91AA84006779F9 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04DD84BE1B91AA84006779F9 /* LoginVC.m */; };
+		04EED1051BA253F100DFF4CC /* QRCodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EED1041BA253F100DFF4CC /* QRCodeVC.m */; settings = {ASSET_TAGS = (); }; };
+		04EED10B1BA255F400DFF4CC /* UIImage+QRCodeImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EED10A1BA255F400DFF4CC /* UIImage+QRCodeImage.m */; settings = {ASSET_TAGS = (); }; };
+		04EED1101BA2D1EC00DFF4CC /* EditVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04EED10F1BA2D1EC00DFF4CC /* EditVC.m */; settings = {ASSET_TAGS = (); }; };
 		04F43D1E1B9FABE300640EA2 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F43D1D1B9FABE300640EA2 /* Account.m */; settings = {ASSET_TAGS = (); }; };
 		04F43D241B9FCB4B00640EA2 /* MeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F43D231B9FCB4B00640EA2 /* MeVC.m */; settings = {ASSET_TAGS = (); }; };
 		04F43D271B9FE02300640EA2 /* XMPPTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F43D261B9FE02300640EA2 /* XMPPTool.m */; settings = {ASSET_TAGS = (); }; };
@@ -188,6 +197,12 @@
 /* Begin PBXFileReference section */
 		040084DD1B9D10050025713E /* AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
 		040084DE1B9D10050025713E /* AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertView.m; sourceTree = "<group>"; };
+		040A37291BA56F6900888BA9 /* ContactVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactVC.h; sourceTree = "<group>"; };
+		040A372A1BA56F6900888BA9 /* ContactVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactVC.m; sourceTree = "<group>"; };
+		040A37301BA5AA4500888BA9 /* 气泡.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "气泡.png"; sourceTree = "<group>"; };
+		040A37341BA5AD5800888BA9 /* 通讯录.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "通讯录.png"; sourceTree = "<group>"; };
+		040A37361BA5AEE200888BA9 /* 我.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我.png"; sourceTree = "<group>"; };
+		040A37381BA5AEE900888BA9 /* 发现.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "发现.png"; sourceTree = "<group>"; };
 		040D8C8A1B99185D00D3DA6E /* NSString+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Hash.h"; sourceTree = "<group>"; };
 		040D8C8B1B99185D00D3DA6E /* NSString+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Hash.m"; sourceTree = "<group>"; };
 		0414B7461B99BCA0002516E7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SMS_SDKLocalizable.strings; sourceTree = "<group>"; };
@@ -495,6 +510,8 @@
 		042DC34E1B9B1601009BF37D /* NSXMLElement+XEP_0335.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSXMLElement+XEP_0335.h"; sourceTree = "<group>"; };
 		042DC34F1B9B1601009BF37D /* NSXMLElement+XEP_0335.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSXMLElement+XEP_0335.m"; sourceTree = "<group>"; };
 		042DC3B31B9B1624009BF37D /* XMPPFramework.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XMPPFramework.h; sourceTree = "<group>"; };
+		04D6D18E1BA19CD3002B0A56 /* MyMessageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMessageVC.h; sourceTree = "<group>"; };
+		04D6D18F1BA19CD3002B0A56 /* MyMessageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMessageVC.m; sourceTree = "<group>"; };
 		04DD84911B91646D006779F9 /* MyChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04DD84951B91646D006779F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04DD84961B91646D006779F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -511,6 +528,12 @@
 		04DD84BB1B91A607006779F9 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		04DD84BD1B91AA84006779F9 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
 		04DD84BE1B91AA84006779F9 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
+		04EED1031BA253F100DFF4CC /* QRCodeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeVC.h; sourceTree = "<group>"; };
+		04EED1041BA253F100DFF4CC /* QRCodeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRCodeVC.m; sourceTree = "<group>"; };
+		04EED1091BA255F400DFF4CC /* UIImage+QRCodeImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+QRCodeImage.h"; sourceTree = "<group>"; };
+		04EED10A1BA255F400DFF4CC /* UIImage+QRCodeImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+QRCodeImage.m"; sourceTree = "<group>"; };
+		04EED10E1BA2D1EC00DFF4CC /* EditVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditVC.h; sourceTree = "<group>"; };
+		04EED10F1BA2D1EC00DFF4CC /* EditVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditVC.m; sourceTree = "<group>"; };
 		04F43D1C1B9FABE300640EA2 /* Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Account.h; sourceTree = "<group>"; };
 		04F43D1D1B9FABE300640EA2 /* Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Account.m; sourceTree = "<group>"; };
 		04F43D221B9FCB4B00640EA2 /* MeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeVC.h; sourceTree = "<group>"; };
@@ -548,6 +571,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		040A37281BA56EA500888BA9 /* Contacts */ = {
+			isa = PBXGroup;
+			children = (
+				040A37291BA56F6900888BA9 /* ContactVC.h */,
+				040A372A1BA56F6900888BA9 /* ContactVC.m */,
+			);
+			name = Contacts;
+			sourceTree = "<group>";
+		};
 		040D8C8D1B99186500D3DA6E /* logic */ = {
 			isa = PBXGroup;
 			children = (
@@ -1470,6 +1502,7 @@
 		04DD84881B91646D006779F9 = {
 			isa = PBXGroup;
 			children = (
+				04F7F8FC1BA562B600B1EA9A /* Source */,
 				04F7957E1B9A69E800ED5BBB /* Framework */,
 				0414B7441B99BCA0002516E7 /* SMS_SDK */,
 				04DD84931B91646D006779F9 /* MyChat */,
@@ -1559,8 +1592,9 @@
 			children = (
 				04F43D251B9FE02300640EA2 /* XMPPTool.h */,
 				04F43D261B9FE02300640EA2 /* XMPPTool.m */,
-				04F43D211B9FCA7C00640EA2 /* MeVC */,
 				04DD849E1B91646D006779F9 /* Main.storyboard */,
+				040A37281BA56EA500888BA9 /* Contacts */,
+				04F43D211B9FCA7C00640EA2 /* MeVC */,
 			);
 			name = Main;
 			sourceTree = "<group>";
@@ -1570,6 +1604,14 @@
 			children = (
 				04F43D221B9FCB4B00640EA2 /* MeVC.h */,
 				04F43D231B9FCB4B00640EA2 /* MeVC.m */,
+				04D6D18E1BA19CD3002B0A56 /* MyMessageVC.h */,
+				04D6D18F1BA19CD3002B0A56 /* MyMessageVC.m */,
+				04EED1031BA253F100DFF4CC /* QRCodeVC.h */,
+				04EED1041BA253F100DFF4CC /* QRCodeVC.m */,
+				04EED10E1BA2D1EC00DFF4CC /* EditVC.h */,
+				04EED10F1BA2D1EC00DFF4CC /* EditVC.m */,
+				04EED1091BA255F400DFF4CC /* UIImage+QRCodeImage.h */,
+				04EED10A1BA255F400DFF4CC /* UIImage+QRCodeImage.m */,
 			);
 			name = MeVC;
 			sourceTree = "<group>";
@@ -1593,6 +1635,17 @@
 				0414B74B1B99BCBF002516E7 /* MessageUI.framework */,
 			);
 			name = Framework;
+			sourceTree = "<group>";
+		};
+		04F7F8FC1BA562B600B1EA9A /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				040A37341BA5AD5800888BA9 /* 通讯录.png */,
+				040A37301BA5AA4500888BA9 /* 气泡.png */,
+				040A37361BA5AEE200888BA9 /* 我.png */,
+				040A37381BA5AEE900888BA9 /* 发现.png */,
+			);
+			name = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1677,12 +1730,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				040A37351BA5AD5800888BA9 /* 通讯录.png in Resources */,
 				042DC1E91B9B151E009BF37D /* build-libidn.sh in Resources */,
 				04DD84BC1B91A607006779F9 /* Login.storyboard in Resources */,
+				040A37371BA5AEE200888BA9 /* 我.png in Resources */,
 				04DD84A01B91646D006779F9 /* Main.storyboard in Resources */,
 				0414B7491B99BCA0002516E7 /* SMS_SDKLocalizable.strings in Resources */,
 				04DD84A51B91646D006779F9 /* LaunchScreen.xib in Resources */,
 				042DC1CC1B9B1361009BF37D /* README.txt in Resources */,
+				040A37311BA5AA4500888BA9 /* 气泡.png in Resources */,
+				040A37391BA5AEE900888BA9 /* 发现.png in Resources */,
 				04DD84A21B91646D006779F9 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1717,6 +1774,7 @@
 				040D8C8C1B99185D00D3DA6E /* NSString+Hash.m in Sources */,
 				042DC23E1B9B1598009BF37D /* XMPPElement.m in Sources */,
 				042DC23C1B9B1598009BF37D /* NSXMLElement+XMPP.m in Sources */,
+				04EED1051BA253F100DFF4CC /* QRCodeVC.m in Sources */,
 				042DC3651B9B1601009BF37D /* XMPPIQ+LastActivity.m in Sources */,
 				042DC24C1B9B1598009BF37D /* XMPPTimer.m in Sources */,
 				042DC3781B9B1601009BF37D /* XMPPvCardCoreDataStorage.m in Sources */,
@@ -1748,6 +1806,7 @@
 				042DC35D1B9B1601009BF37D /* XMPPResourceMemoryStorageObject.m in Sources */,
 				042DC2421B9B1598009BF37D /* XMPPModule.m in Sources */,
 				042DC3871B9B1601009BF37D /* TURNSocket.m in Sources */,
+				04EED1101BA2D1EC00DFF4CC /* EditVC.m in Sources */,
 				042DC23A1B9B1598009BF37D /* NSData+XMPP.m in Sources */,
 				042DC1DF1B9B1410009BF37D /* DDXMLDocument.m in Sources */,
 				042DC3721B9B1601009BF37D /* XMPPRoomOccupantMemoryStorageObject.m in Sources */,
@@ -1761,6 +1820,7 @@
 				042DC1D01B9B1378009BF37D /* GCDAsyncSocket.m in Sources */,
 				042DC2491B9B1598009BF37D /* XMPPIDTracker.m in Sources */,
 				042DC2401B9B1598009BF37D /* XMPPJID.m in Sources */,
+				04D6D1901BA19CD3002B0A56 /* MyMessageVC.m in Sources */,
 				041CB16C1B9EFEDF00801914 /* MBProgressHUD.m in Sources */,
 				042DC3A21B9B1602009BF37D /* XMPPStreamManagementMemoryStorage.m in Sources */,
 				042DC2441B9B1598009BF37D /* XMPPPresence.m in Sources */,
@@ -1833,6 +1893,7 @@
 				042DC3951B9B1601009BF37D /* XMPPCapabilities.m in Sources */,
 				042DC3611B9B1601009BF37D /* XMPPSystemInputActivityMonitor.m in Sources */,
 				04F43D241B9FCB4B00640EA2 /* MeVC.m in Sources */,
+				040A372B1BA56F6900888BA9 /* ContactVC.m in Sources */,
 				042DC3591B9B1601009BF37D /* XMPPResourceCoreDataStorageObject.m in Sources */,
 				042DC3861B9B1601009BF37D /* XMPPPubSub.m in Sources */,
 				042DC36B1B9B1601009BF37D /* XMPPRoomOccupantCoreDataStorageObject.m in Sources */,
@@ -1848,6 +1909,7 @@
 				042DC3801B9B1601009BF37D /* XMPPvCardTempLabel.m in Sources */,
 				042DC3891B9B1601009BF37D /* XMPPMessage+XEP_0066.m in Sources */,
 				042DC24B1B9B1598009BF37D /* XMPPStringPrep.m in Sources */,
+				04EED10B1BA255F400DFF4CC /* UIImage+QRCodeImage.m in Sources */,
 				042DC3531B9B1601009BF37D /* XMPPIncomingFileTransfer.m in Sources */,
 				042DC3921B9B1601009BF37D /* XMPPCapabilitiesCoreDataStorage.m in Sources */,
 				042DC3A81B9B1602009BF37D /* XMPPTime.m in Sources */,

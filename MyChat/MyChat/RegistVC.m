@@ -77,6 +77,7 @@
             //
             [Account shareInstance].registUser = _phoneNum.text;
             [Account shareInstance].registPwd = [_pwd.text hmacMD5StringWithKey:@"pwd"];
+            [Account shareInstance].loginUser = [Account shareInstance].registUser;
             [XMPPTool shareInsans].registOperation = YES;
             [[XMPPTool shareInsans] XMPPRegist:^(XMPPResultType result) {
                 if (result == XMPPresultRegistFialuer) {

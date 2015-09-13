@@ -11,7 +11,8 @@
 #import <SMS_SDK/SMS_SDK.h>
 #import "Account.h"
 #import "XMPPTool.h"
-
+#import "DDTTYLogger.h"
+#import "DDLog.h"
 /**
  登录流程：
  1.初始化xmppStraem
@@ -37,6 +38,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [DDLog addLogger:[DDTTYLogger sharedInstance]];
     //登录
     [Account shareInstance].isLogin = [[NSUserDefaults standardUserDefaults] boolForKey:isLoginKey];
     if ([Account shareInstance].isLogin) {
@@ -73,8 +76,10 @@
     
 }
 
+#pragma mark - 程序退出后释放资源
 - (void)applicationWillTerminate:(UIApplication *)application {
-    
+    [[XMPPTool shareInsans] tearDoenStream];
 }
+
 
 @end
